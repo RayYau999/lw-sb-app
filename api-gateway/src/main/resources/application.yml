@@ -1,0 +1,18 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+
+application:
+  service:
+    base-url: http://localhost:8081
+
+app:
+  auth:
+    base-url: http://localhost:8080
+    issuer: lw-sb-app
+    ttl-seconds: 3600
+    jwt-secret: "V3A2+b9nUSbrPZ2+l9OYvKSiFYOKyHs1SdZ8eUwaJs8="
+  # client-secret-file: secret/client_secret_....json  # optional, auto-detects secret/client_secret_*.json

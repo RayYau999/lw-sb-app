@@ -1,0 +1,10 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: application
+
+app:
+  auth:
+    jwt-secret: "V3A2+b9nUSbrPZ2+l9OYvKSiFYOKyHs1SdZ8eUwaJs8="
