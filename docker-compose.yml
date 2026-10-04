@@ -1,0 +1,24 @@
+services:
+  application:
+    build:
+      context: .
+      target: application
+    image: lw-sb-application:1.0
+    ports:
+      - "8081:8081"
+
+  api-gateway:
+    build:
+      context: .
+      target: api-gateway
+    image: lw-sb-api-gateway:1.0
+    ports:
+      - "8080:8080"
+    environment:
+      # inside Docker, localhost:8081 is the container itself -> use the service name
+      APPLICATION_SERVICE_BASE_URL: http://application:8081
+    volumes:
+      # Google client secret is not baked into the image (.dockerignore) -> mount it
+      - ./secret:/app/secret:ro
+    depends_on:
+      - application

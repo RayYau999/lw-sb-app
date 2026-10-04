@@ -1,0 +1,10 @@
+.git
+.idea
+.vscode
+**/target
+secret/
+*.iml
+*.md
+.DS_Store
+docker-compose.yml
+Dockerfile
